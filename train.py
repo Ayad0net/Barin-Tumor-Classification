@@ -35,5 +35,5 @@ try:
 except:
     print("No checkpoints found... ")
 
-model.fit(x=train_dataset, validation_data=(validation_dataset) ,batch_size=2, epochs=10, callbacks=[cp_callback],  initial_epoch=initial_epoch)
+model.fit(x=train_dataset, validation_data=(validation_dataset), epochs=10, callbacks=[cp_callback],  initial_epoch=initial_epoch)
 
