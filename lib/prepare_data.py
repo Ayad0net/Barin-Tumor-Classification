@@ -4,19 +4,19 @@ PATH_IMAGES = "dataset/brain-data"
 
 
 
-image_generator = ImageDataGenerator(rescale=1/255, validation_split=0.4)    
+image_generator = ImageDataGenerator(rescale=1/255, validation_split=0.2)    
 
-train_dataset = image_generator.flow_from_directory(batch_size=32,
+train_dataset = image_generator.flow_from_directory(batch_size=16,
                                                  directory=PATH_IMAGES,
                                                  shuffle=True,
-                                                 target_size=(280, 280), 
+                                                 target_size=(224, 224), 
                                                  subset="training",
                                                  class_mode='binary')
 
-validation_dataset = image_generator.flow_from_directory(batch_size=32,
+validation_dataset = image_generator.flow_from_directory(batch_size=16,
                                                  directory=PATH_IMAGES,
                                                  shuffle=True,
-                                                 target_size=(280, 280), 
+                                                 target_size=(224, 224), 
                                                  subset="validation",
                                                  class_mode='binary')
 
