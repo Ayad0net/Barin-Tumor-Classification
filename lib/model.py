@@ -9,5 +9,5 @@ def base_model():
     headModel = Dense(256, activation="relu")(headModel)
     headModel = Dropout(0.5)(headModel)
     headModel = Dense(1, activation="sigmoid")(headModel)
-    model = Model(inputs=base_model.input, outputs=headModel)
+    return Model(inputs=base_model.input, outputs=headModel)
 
