@@ -4,21 +4,21 @@ PATH_IMAGES = "dataset/brain-data"
 
 
 
-image_generator = ImageDataGenerator(rescale=1/255, validation_split=0.2)    
+image_generator = ImageDataGenerator(rescale=1/255, validation_split=0.4)    
 
 train_dataset = image_generator.flow_from_directory(batch_size=32,
                                                  directory=PATH_IMAGES,
                                                  shuffle=True,
                                                  target_size=(280, 280), 
                                                  subset="training",
-                                                 class_mode='categorical')
+                                                 class_mode='binary')
 
 validation_dataset = image_generator.flow_from_directory(batch_size=32,
                                                  directory=PATH_IMAGES,
                                                  shuffle=True,
                                                  target_size=(280, 280), 
                                                  subset="validation",
-                                                 class_mode='categorical')
+                                                 class_mode='binary')
 
 
 def load_data():

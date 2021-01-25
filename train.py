@@ -10,7 +10,6 @@ from lib.ploting import imshow2d, imshow2d_overlay
 
 train_dataset, validation_dataset = prepare_data.load_data()
 
-
 model = base_model()
 model.compile(optimizer="adam", loss="binary_crossentropy", metrics=["acc"])
 model.summary()
